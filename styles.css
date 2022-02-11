@@ -1,0 +1,446 @@
+:root {
+    --blanco: #ffffff; /*se crean variables para los colores*/
+    --oscuro: #212121;
+    --primario: #ffc187;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+
+
+
+html{
+    font-size: 62.5%;/*tamaño de letras para todo el html*/
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory; /* el scroll devera navegar en las coordenadas "y" y no en "x" atra variable en lugar de mandatory es proximity*/
+}
+
+
+*, *:before, *:after { /*variables globales para los box sizing*/
+    box-sizing: inherit;
+  }
+
+body{
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Lora', serif;font-family: 'Lora', serif; /*tipo de fuente que se va ausar la fuente  se trajo de google*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%); /*color de la pagina degradado*/
+}
+
+h1{
+font-size: 3.8rem; /*Los h1 son de 38 px*/
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;  /*centra todos los h*/
+}
+
+.titulo span{
+    font-size: 2rem;
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 1rem;
+}
+
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.hero {
+    background-image: url(img/esencia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0 0 0 / 30%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: white;
+}
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+
+}
+.boton{
+    background-color: var(--secundario);
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+
+/*utilidades*/
+.w-sm-100{
+    width: 100%;
+}
+
+@media(min-width: 768px){
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex{
+    justify-content: flex-end;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+.contenido-hero h2 span{
+    font-size: 2rem;
+}
+
+/*galerias*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+img{
+    width: 100%;
+}
+
+ /*grid galerias*/
+ .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    }
+  @media(min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+/*Grid Videos*/
+    .grids {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        padding: 1rem;
+        }
+    @media(min-width: 768px) {
+        .grids {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+  .producto {
+      background-color: var(--primarioOscuro);
+      padding: 1rem;
+
+  }
+
+  .producto__imagen {
+       width: 100%;
+  }
+
+  
+  .producto__nombre {
+      font-size: 1rem;
+  }
+
+ 
+
+  .producto__nombre
+   {
+      font-family: var(--fuentePrincipal);
+      margin: 1rem 0;
+      text-align: center;
+      line-height: 1.2;/*espacio del interlineado*/
+  }
+
+  /*Formulario*/
+
+  .formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    margin: 0 auto;/*centra el formulario*/
+    padding: 2rem;
+    border-radius: 1rem;
+   
+   
+    
+    }
+
+    .contenedor_formulario{
+      padding: 2rem;
+     ;
+    }
+    
+    .formulario fieldset{
+    border: none; /*elimina el marco  que trae popr default*/
+    }
+    
+    .formulario legend{
+        text-align: center;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 2rem;/*separa el titulo del la primera entrada o input*/
+        color: var(--primario);
+    }
+    
+    @media(min-width:768px){
+    .contenedor-campos{
+        display: grid;
+       /* grid-template-columns: repeat(2, 1fr);*/
+       grid-template-columns: 50% 50%;
+       column-gap: 1rem;
+    
+    }
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+       grid-column: 1/3;;
+    }
+    
+    .campo{
+      margin-bottom: 1rem;
+    }
+    
+    .campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+    }
+    
+    /*.campo input[type="text"], //tipos de selectores
+    .campo input[type="tel"]{
+        background-color: red;
+    }*/
+    
+    .input-text {
+        width: 100%;
+        border: none;
+        padding: 1.5rem;
+        border-radius: .5rem;
+    }
+    
+    /*.enviar .boton{
+        width: 100%;
+    }*/
+    
+    .campo textarea{
+        height: 20rem;
+    }
+
+    /*block*/
+    .entrada {
+        border-bottom: 2px solid var(--gris);
+        margin-bottom: 2rem;
+    }
+
+    .entrada__imagen{
+        padding: 2rem;
+    }
+
+    .entrada__contenido p, h4{
+        padding: 2rem;
+    }
+    
+    .entrada:last-of-type { /*aqui estamos diciendo que al ultimo elemento no le aparesca el border y el margin en la clase  entrada*/
+        border: none;
+        margin-bottom: 0;
+    }
+
+    
+@media (min-width:768px) {
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+    
+    .boton {
+        display: block; /*para un celular el boton ocupa toda la pantalla*/
+        font-family: var(--fuenteHeading);
+        color: var(--blanco);
+        text-align: center;
+        padding: 1rem 3rem;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 2rem; /*Esta es la separacion entre el boton y lo que continua*/
+        border: none;
+    
+    }
+    @media (min-width:768px) {
+        .boton {
+            display: inline-block; /* checar en el video 81 minuto 7 */
+        }
+    }
+    .boton:hover{
+        cursor: pointer; /*Una vez que se le dan estilos a los botones Submit pierden las propiedades y hay que ponerle nuevamente la manita*/
+        
+    }
+
+    .boton__primario{
+        margin-left: 2rem;
+    }
+
+    /*curso*/
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris); /*Nos crea una linea de separacion entre las imagenes*/
+
+}
+
+.curso:last-of-type {
+    border:none   /*la ultima imagen no tendra linea*/
+}
+
+@media (min-width:768px) {
+   .curso {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 2rem;
+   }
+    
+}
+
+.curso_label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+ }
+ 
+ .curso__info {
+    font-weight: normal;
+ }
+ 
+ .curso_label,
+ .curso__info {
+     font-size: 2 rem;
+ }
+
+ @media (min-width:768px) {
+    .contenido {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+}
+.margin {
+    margin-top: 0;
+}
+
+/*Link para traer facebook a sitio web https://developers.facebook.com/docs/plugins/page-plugin/*/
+
+/*footer*/
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+   
+ }
+
+ .footer__texto {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+ }
+
+ 
+ .footer_bg p{
+background-color: var(--oscuro);
+color: var(--grisClaro);
+padding: 3rem;
+margin-left: 1rem;
+
+justify-content: center;
+ }
+
+ .footer_bg{
+     padding: 1rem;
+ }
+
+ .footer_bg p span{
+     font-size: 1.5rem;
+     color: var(--secundario);
+    
+ }
+
+ .iframe{
+     padding: .5rem;
+     background-color: black;
+ }
+
+ .principal{
+     padding: 1rem;
+ }
+
+ .contenedor1{
+     padding: 2rem;
+ }
+
